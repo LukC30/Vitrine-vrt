@@ -11,7 +11,7 @@ function NavScrollExample() {
   return (
     <Navbar variant="dark" expand="lg" className="bg-dark" style={{color:"white"}}>
       <Container fluid>
-        <Navbar.Brand href="#"><img src={mt} style={{width:"100px", height:"auto"}}/></Navbar.Brand>
+        <Navbar.Brand href="/"><img src={mt} style={{width:"100px", height:"auto"}}/></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -38,8 +38,10 @@ function NavScrollExample() {
               className="me-3"
               aria-label="Search"
             />
-            <Button variant="primary" className='me-5'>Buscar</Button>
-          <button><Carrinho/></button></Form>
+            <Button variant="primary" className='me-3'>Buscar</Button>
+          <button><Carrinho/></button>
+          
+          </Form>
           
         </Navbar.Collapse>
       </Container>
