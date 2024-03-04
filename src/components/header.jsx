@@ -19,8 +19,8 @@ function NavScrollExample() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1" style={{color:"#fff"}}>Home</Nav.Link>
-            <NavDropdown variant="dark" title="Link" id="navbarScrollingDropdown">
+            <Nav.Link href="#action1" style={{color:"#fff"}}>Produtos</Nav.Link>
+            <NavDropdown variant="dark" title="Categorias" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Item 1</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
                 Item 2 

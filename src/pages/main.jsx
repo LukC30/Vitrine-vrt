@@ -11,9 +11,16 @@ return(
  <div>
     <Header/>
     <Carrossel/>
-    <div className="">
-      <h3>Recomendaçoes</h3>
+    
+      <h3 style={{textAlign: "center"}}>Recomendaçoes</h3>
+      <br/>
+   <div className="d-flex">
       <Produto/>
+      <Produto/>
+      <Produto/>
+      <Produto/>
+      <Produto/>
+      
    </div>
     
     
