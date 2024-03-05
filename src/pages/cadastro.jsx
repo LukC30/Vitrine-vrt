@@ -20,7 +20,6 @@ export default function Cadastro() {
         axios.post("http://localhost:80/backend/Api.php", cadastro).then((response) => {
             console.log(response.data);
             Navigator('/');
-
         })
 
     }

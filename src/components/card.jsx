@@ -1,43 +1,45 @@
-import axios from "axios";
-import { useEffect } from "react";
-import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
-
-
-export default function CardItens() {
-    //const [products, setProducts] = useState({});
+export default function Card({ id }) {
+    const [produto, setProduto] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const navigator = useNavigate();
 
     useEffect(() => {
-        getProduct();
-    }, []);
+        getProd();
+    }, [])
 
-    function getProduct() {
-        axios.get('http://localhost/backend/Api.php').then(function (response) {
-            console.log(response.data);
-            //setProducts(response.data)
-        });
+    function getProd() {
+        axios.get(`http://localhost:80/backend/produtos.php/${id}`)
+            .then((response) => {
+                setProduto(response.data);
+                setLoading(false);
+            })
+            .catch((error) => {
+                console.error('Erro ao buscar produto:', error);
+                setLoading(false);
+            });
     }
+   
+    if (loading) {
+        return <p>Carregando...</p>; // Exibe uma mensagem de carregamento enquanto os dados estão sendo carregados
+    }
+
+    if (!produto) {
+        return <p>Nenhum produto encontrado.</p>; // Exibe uma mensagem se nenhum produto for encontrado
+    }
+
     return (
-        <div>
-            <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
-                    <Card.Body>
-                        <Card.Title>Produto</Card.Title>
-                        <Card.Text>
-                           tipo do produto
-                        </Card.Text>
-                    </Card.Body>
-                    <ListGroup className="list-group-flush">
-                        <ListGroup.Item>Produto</ListGroup.Item>
-                        <ListGroup.Item>Produto</ListGroup.Item>
-                        <ListGroup.Item>Produto</ListGroup.Item>
-                    </ListGroup>
-                    <Card.Body>
-                        <Card.Link href="#">Comprar</Card.Link>
-                        <Card.Link href="#">Adicionar ao carrinho</Card.Link>
-                    </Card.Body>
-                </Card>
+        <div class="card" style={{width: '15%', marginLeft: "4.3%", }}>
+        <img src={produto.caminho} class="card-img-top" alt="..."/>
+        <div class="card-body">
+          <h5 class="card-title">{produto.descricao}</h5>
+          <p></p>
+          <p class="card-text">Descricao do produto</p>
+          <a href={`/produto/${id}`} class="btn btn-primary">Ver mais</a>
         </div>
-    )
+      </div>
+    );
 }

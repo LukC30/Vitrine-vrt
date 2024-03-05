@@ -4,7 +4,6 @@ ini_set('display_errors', 1);
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 
-echo "test";
 
 include 'dbaccess.php';
 $db = new DbConnect;
@@ -13,7 +12,7 @@ $conn = $db->connect();
 $method = $_SERVER['REQUEST_METHOD'];
 switch($method){
     case "GET":
-        $sql = "SELECT * FROM produtos WHERE ID =< 5";
+        $sql = "SELECT * FROM produtos";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $users = $stmt ->fetchAll(PDO::FETCH_ASSOC);

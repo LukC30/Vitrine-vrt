@@ -8,7 +8,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import '../App.css';
 
-export default function App() {
+export default function App({id}) {
   return (
     <div>
       <Header />
