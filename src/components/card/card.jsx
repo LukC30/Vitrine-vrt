@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import './card.css'
 
 export default function Card({ id }) {
     const [produto, setProduto] = useState(null);
@@ -24,22 +25,29 @@ export default function Card({ id }) {
     }
    
     if (loading) {
-        return <p>Carregando...</p>; // Exibe uma mensagem de carregamento enquanto os dados estão sendo carregados
+        return <p>Carregando...</p>; 
     }
 
     if (!produto) {
-        return <p>Nenhum produto encontrado.</p>; // Exibe uma mensagem se nenhum produto for encontrado
+        return <p>Nenhum produto encontrado.</p>; 
     }
 
     return (
-        <div class="card" style={{width: '15%', marginLeft: "4.3%", }}>
-        <img src={produto.caminho} class="card-img-top" alt="..."/>
-        <div class="card-body">
-          <h5 class="card-title">{produto.descricao}</h5>
-          <p></p>
-          <p class="card-text">Descricao do produto</p>
-          <a href={`/produto/${id}`} class="btn btn-primary">Ver mais</a>
-        </div>
-      </div>
+        <div class="product-card" style={{rowGap: '10px'}}>
+		<div class="badge">{produto.nomegru}</div>
+		<div class="product-tumb">
+			<img src={produto.caminho} alt=""/>
+		</div>
+		<div class="product-details">
+			<span class="product-catagory">{produto.grupo}</span>
+			<h4><a href={`/prod/${id}`}>{produto.descricao}</a></h4>
+			<div class="product-bottom-details">
+				<div class="product-price"><small></small>R$ {produto.preco}</div>
+				<div class="product-links">
+					<a href={`/prod/${id}`}><i class="fa fa-shopping-cart"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
     );
 }

@@ -8,8 +8,10 @@ import mt from '../MT.png'
 import Carrinho from './carrinho.jsx';
 
 function NavScrollExample() {
+
+
   return (
-    <Navbar variant="dark" expand="lg" className="bg-dark" style={{color:"white"}}>
+    <Navbar variant="dark" expand="lg" className="bg-dark" style={{backgroundColor:"black"}}>
       <Container fluid>
         <Navbar.Brand href="/"><img src={mt} style={{width:"100px", height:"auto"}}/></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />

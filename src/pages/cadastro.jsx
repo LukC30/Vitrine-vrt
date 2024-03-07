@@ -44,7 +44,7 @@ export default function Cadastro() {
                     <InputGroup.Text>Descricao</InputGroup.Text>
                     <Form.Control as="textarea" aria-label="With textarea" value={description} onChange={(e) => { setDescription(e.target.value) }} />
                 </InputGroup><br />
-                <Button as="input" type="submit" value="Cadastrar" className='ml-1' />
+                <Button as="input" type="submit" value="Cadastrar" className='ml-1' style={{width: '7%'}} />
             </form>
         </>
     )

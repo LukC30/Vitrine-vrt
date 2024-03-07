@@ -7,7 +7,7 @@
   background-color: white;
   min-height: auto;
   min-width: auto;
-  
+
 }
 
 .App-logo {
@@ -48,35 +48,40 @@
 
 .cardImagem {
   justify-content: left;
-  min-height: 20%;
-  min-width: 15%;
-  margin-left: 5%;
+  max-height: 50%;
+  max-width: 65%;
   display: flex;
-  flex-direction: row;
   margin-top: 5%;
+  padding-bottom: 5px;
 }
 
+@media only screen and (min-width: 1024px) {
+  .cardImagem {
+
+    max-width: 50%;
+  }
+}
 
 .imagem {
-  max-width: 45%;
-  max-height: 30%;
-
+  max-width: 50%;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10%;
 }
 
 
 .divTexto {
   align-items: center;
   color: black;
-  min-width: auto;
+  max-width: 40%;
   min-height: auto;
   display: flexbox;
-  position: relative;
 }
 
 .tituloLivro {
   text-transform: capitalize;
   text-align: left;
-  
+
   font-size: 110%;
 }
 
@@ -89,7 +94,7 @@
 .descricao {
   text-align: left;
   color: #012930;
-  font-size: x-small;
+  font-size: small;
 }
 
 .hr {
@@ -103,17 +108,32 @@ a:hover {
 }
 
 .tipoLivro {
-  color: #007185;   
+  color: #007185;
 
 }
 
-.divCadastro{
-margin: 0 auto;
-background-color: beige;
-border:#e5d9b3 3px;
-border-style: solid;
-border-radius: 1%;
-align-items: center;
-width: 60%;
-height: auto;
+.divCadastro {
+  margin: 0 auto;
+  background-color: beige;
+  border: #e5d9b3 3px;
+  border-style: solid;
+  border-radius: 1%;
+  align-items: center;
+  width: 60%;
+  height: auto;
+}
+
+.containerxd {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.containerr {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
