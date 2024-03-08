@@ -18,7 +18,7 @@ switch($method){
         $users = $stmt ->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode($users);
     break;
-    case "POST":
+    /*case "POST":
         $user = json_decode(file_get_contents('php://input'));
         $sql = "INSERT INTO teste (nome_prod, descricao) VALUES(:nome_prod, :descricao)";
         $stmt = $conn->prepare($sql);
@@ -31,6 +31,6 @@ switch($method){
             $response = ['status' => 0, 'message' => "falha na criação de usuário. Erro: " . $errorInfo[2]];
         }
         echo json_encode($response);
-        break;
+        break;*/
 }
 ?>
