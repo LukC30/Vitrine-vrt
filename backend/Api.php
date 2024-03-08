@@ -12,7 +12,7 @@ $conn = $db->connect();
 $method = $_SERVER['REQUEST_METHOD'];
 switch($method){
     case "GET":
-        $sql = "SELECT * FROM produtos";
+        $sql = "SELECT * FROM profilia";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $users = $stmt ->fetchAll(PDO::FETCH_ASSOC);
