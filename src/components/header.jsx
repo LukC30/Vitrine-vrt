@@ -8,10 +8,13 @@ import mt from '../MT.png'
 import Carrinho from './carrinho.jsx';
 
 function NavScrollExample() {
+  function redirect(){
+    window.location.href = '/carrinho'
 
+  }
 
   return (
-    <Navbar variant="dark" expand="lg" className="bg-dark" style={{backgroundColor:"black"}}>
+    <Navbar variant="dark" expand="lg" className="bg-dark">
       <Container fluid>
         <Navbar.Brand href="/"><img src={mt} style={{width:"100px", height:"auto"}}/></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -27,7 +30,6 @@ function NavScrollExample() {
               <NavDropdown.Item href="#action4">
                 Item 2 
               </NavDropdown.Item>
-              <NavDropdown.Divider />
               <NavDropdown.Item href="#action5">
                 Item 3
               </NavDropdown.Item>
@@ -41,10 +43,8 @@ function NavScrollExample() {
               aria-label="Search"
             />
             <Button variant="primary" className='me-3'>Buscar</Button>
-          <button><Carrinho/></button>
-          
+            <button type='button' onClick={redirect}><a href={`/carrinho/`}><Carrinho/></a></button>
           </Form>
-          
         </Navbar.Collapse>
       </Container>
     </Navbar>

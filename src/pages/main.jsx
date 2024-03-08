@@ -12,8 +12,9 @@ export default function Main() {
             img2={'https://img.irroba.com.br/fit-in/600x600/filters:fill(fff):quality(80)/jabucomb/catalog/api/jabucomb_citelirr/62ceeba2aa83f.jpg'}
             img3={'https://imgs.pontofrio.com.br/1559273951/1xg.jpg'}
          />
-         <br />
+         <br /><br />
          <h3 style={{ textAlign: "center" }}>Recomendaçoes</h3>
+         <br />
          <div className="containerxd">
             <Produto
                id={5}

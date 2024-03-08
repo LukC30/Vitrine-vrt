@@ -53,14 +53,28 @@
   display: flex;
   margin-top: 5%;
   padding-bottom: 5px;
+  transition: transform .4s;
+  margin-left: 15%;
 }
 
+.cardImagem:hover{
+  transform: scale(1.5);
+
+}
 @media only screen and (min-width: 1024px) {
   .cardImagem {
 
     max-width: 50%;
   }
 }
+
+@media only screen and (max-width: 700px){
+  .cardImagem {
+    transition: none; /* Desativar todas as transições */
+    transform: none !important; /* Garantir que a transformação seja removida */
+  }
+}
+
 
 .imagem {
   max-width: 50%;
