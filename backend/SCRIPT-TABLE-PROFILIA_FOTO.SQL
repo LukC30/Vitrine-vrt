@@ -12,3 +12,12 @@ ROW_FORMAT=DYNAMIC
 AUTO_INCREMENT=1
 MAX_ROWS=999999
 ;
+
+#Criação de view para facilitar as buscas 
+
+create view produtos as
+select a.codprod as id, a.descricao, a.prvenda as preco, a.codgru as grupo, b.nomegru as nome_grupo , c.caminho
+from profilia a
+inner join grupo b on b.codgru = a.codgru
+inner join profilia_foto c on c.codprod = a.codprod
+where c.id_foto = 1
