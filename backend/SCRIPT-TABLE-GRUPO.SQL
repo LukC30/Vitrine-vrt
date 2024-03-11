@@ -14,10 +14,4 @@ ROW_FORMAT=DYNAMIC
 AUTO_INCREMENT=1
 MAX_ROWS=999999
 ;
-use db_loja;
-create table teste(
-id int auto_increment primary key,
-nome_prod varchar(50),
-descricao varchar (255)
 
-);

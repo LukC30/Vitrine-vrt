@@ -11,10 +11,12 @@ function Texto({ produto, fornecedor, linkAutor, nomeGrupo, descricao, preco, ca
     function cart(){
         let cartJson = localStorage.getItem("produtos");
         let carrinho = cartJson ? JSON.parse(cartJson) : [];
+        let precoTot = preco * qtd;
         let produtoCart = {
         nome: produto,
         quantidade: qtd,
-        imagem: caminho
+        precoUnit: (preco).toFixed(2),
+        precoTotal: (precoTot).toFixed(2)
         };
         setQtd(1);
         carrinho.push(produtoCart);
@@ -22,7 +24,6 @@ function Texto({ produto, fornecedor, linkAutor, nomeGrupo, descricao, preco, ca
         console.log(localStorage.getItem("produtos"));
         alert("Seu produto foi adicionado ao carrinho!");
     }
-
  
 
     return (
@@ -37,10 +38,10 @@ function Texto({ produto, fornecedor, linkAutor, nomeGrupo, descricao, preco, ca
             </p><hr className="hr"></hr>
                 <Row>
                     <Col>
-                        <span style={{ justifyContent: 'right' }}>R$ {preco}</span>
+                        <span style={{ justifyContent: 'right' }}>R$ {(preco*qtd).toFixed(2)}</span>
                     </Col>
                     <Col>
-                        <Button type="button" variant="light" onClick={() => setQtd(qtd - 1)}> - </Button>
+                        <Button type="button" variant="light" onClick={() => setQtd( qtd > 0 && qtd - 1)}> - </Button>
                         <span> {qtd} </span>
                         <Button type="button" variant="light" onClick={() => setQtd(qtd + 1)}>+</Button>
                     </Col>
