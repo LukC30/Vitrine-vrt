@@ -28,13 +28,12 @@ export default function Carrinho() {
             alert("Parece que você não comprou nada ainda, vamos voltar para o site!")
 
         }
-
     }
 
     function enviarItens() {
         setShow(false)
         carrinhoJson.map((produto) => {
-            itemList += `\n\nNome: ${produto.nome} \nQuantidade: ${produto.quantidade} \nPreço total: R$: ${(produto.precoTotal)}`;
+            itemList += `\n\nNome: ${produto.nome} \nQuantidade: ${produto.quantidade} \nPreço Unitário: ${produto.precoUnit} \nPreço total: R$: ${(produto.precoTotal)}`;
         })
         itemList += `\n\nPreço Total: R$: ${(precoCarrinho).toFixed(2)}`
         let mensagem = encodeURIComponent(itemList)
